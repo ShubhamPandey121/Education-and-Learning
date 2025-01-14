@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learnify.com</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <header>
+    <div class="logo">Learnify</div>
+    
+    <nav class="hello">
+      <a href="index.html">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="profile.html" id="profile">Profile</a>
+      <a href="quiz2.html">Quiz</a>
+    </nav>
+  
+  </header>
+  
+  <div class="hero">
+    <h1>Welcome to Learnify!</h1>
+    <p>Explore courses and enhance your skills.</p>
+    <a href="#courses"><button>Explore Courses</button></a>
+  </div>
+  
+  
+  <section id="courses" class="courses">
+    <h2>Available Courses</h2>
+
+    <div class="course-grid" >
+
+      <div class="course-card">
+        <h3>Programming Language</h3>
+        <a href="course1.html">
+        <button>Start Learning</button></a>
+      </div>
+
+      <div class="course-card">
+      <h3>Data Structure & Algorithm</h3>
+      <a href="course2.html"><button>Start Learning</button></a>
+      </div>
+
+      <div class="course-card">
+      <h3>Web Development</h3>
+      <a href="course3.html"><button>Start Learning</button></a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="courses" class="courses">
+      <div class="course-grid">
+
+      <div class="course-card">
+        <h3>Artificial Intelligence</h3>
+        <a href="course4.html">
+        <button>Start Learning</button></a>
+      </div>
+
+
+      <div class="course-card">
+        <h3>Machine Learning</h3>
+        <a href="course5.html"><button>Start Learning</button></a>
+      </div>
+      <div class="course-card">
+        
+        <h3>Data Analysis</h3>
+        <a href="course6.html"><button>Start Learning</button></a>
+      </div>
+
+    </div>
+
+  </section>
+  
+
+<footer>
+
+  <div class="foot-panel1">
+    <a href="#">Back to top</a>
+  </div>
+
+<div>
+
+  <div class="footerCopyright">
+    Made with &hearts; by Learnify
+  </div>
+
+  <div class="footerCopyright">
+    &copy; 2025-Present, Learnify.com, Inc. or its affiliates
+  </div>
+
+</div>
+
+</footer>
+
+<script>
+  const profileLink = document.getElementById('profile');
+  const userName = localStorage.getItem('userName');
+  if (userName) {
+    profileLink.textContent = userName;
+  }
+
+  
+</script>
+  
+</body>
+</html>
+  

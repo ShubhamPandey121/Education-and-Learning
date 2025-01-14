@@ -1,0 +1,292 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Adventure</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            background-size: cover;
+            overflow: hidden;
+        }
+        .container {
+            width: 80%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px #ff0000;
+        }
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .option {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .option:hover {
+            background-color: #666;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .option a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .option span {
+            font-size: 18px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .hint {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Choose Your Adventure</div>
+        <div class="options">
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#dsa"><span>DSA</span></a>
+                <div class="hint">Data Structures and Algorithms</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#language-practice"><span>Language Practice</span></a>
+                <div class="hint">Programming Languages Practice</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#webdev"><span>Web Development</span></a>
+                <div class="hint">Building Websites and Apps</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#ai"><span>AI</span></a>
+                <div class="hint">Artificial Intelligence</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#ml"><span>ML</span></a>
+                <div class="hint">Machine Learning</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#data-science"><span>Data Science</span></a>
+                <div class="hint">Analyzing Data</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showHint(element) {
+            element.querySelector('.hint').style.display = 'block';
+        }
+
+        function hideHint(element) {
+            element.querySelector('.hint').style.display = 'none';
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Adventure</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            background-size: cover;
+            overflow: hidden;
+        }
+        .container {
+            width: 80%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px #ff0000;
+        }
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .option {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .option:hover {
+            background-color: #666;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .option a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .option span {
+            font-size: 18px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .hint {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: none;
+        }
+        /* Animated Background Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: twinkling 1.5s infinite ease-in-out alternate;
+        }
+        @keyframes twinkling {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Choose Your Adventure</div>
+        <div class="options">
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#dsa"><span>DSA</span></a>
+                <div class="hint">Data Structures and Algorithms</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#language-practice"><span>Language Practice</span></a>
+                <div class="hint">Programming Languages Practice</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#webdev"><span>Web Development</span></a>
+                <div class="hint">Building Websites and Apps</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#ai"><span>AI</span></a>
+                <div class="hint">Artificial Intelligence</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#ml"><span>ML</span></a>
+                <div class="hint">Machine Learning</div>
+            </div>
+            <div class="option" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+                <a href="#data-science"><span>Data Science</span></a>
+                <div class="hint">Analyzing Data</div>
+            </div>
+        </div>
+    </div>
+    <!-- Add stars for animated background -->
+    <div class="star" style="top: 10%; left: 20%;"></div>
+    <div class="star" style="top: 30%; left: 70%;"></div>
+    <div class="star" style="top: 50%; left: 50%;"></div>
+    <div class="star" style="top: 80%; left: 30%;"></div>
+    <div class="star" style="top: 20%; left: 80%;"></div>
+    <!-- Background music -->
+    <audio autoplay loop>
+        <source src="your-background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function showHint(element) {
+            element.querySelector('.hint').style.display = 'block';
+        }
+
+        function hideHint(element) {
+            element.querySelector('.hint').style.display = 'none';
+        }
+
+        // Function to add stars dynamically
+        function createStars() {
+            const numStars = 50;
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                document.body.appendChild(star);
+            }
+        }
+
+        createStars();
+    </script>
+</body>
+</html> 

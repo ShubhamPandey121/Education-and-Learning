@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Quiz</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        }
+        .quiz-container {
+            width: 80%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .answers {
+            margin-top: 10px;
+        }
+        .answer {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .answer input {
+            margin-right: 10px;
+        }
+        .button {
+            background-color: #61dafb;
+            border: none;
+            color: #282c34;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #21a1f1;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #61dafb;
+        }
+        .tips {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+
+
+
+        /*video add kr rhe */
+        .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; } 
+        .video-container video { width: 100%; height: 100%; object-fit: cover; filter: blur(10px); } 
+        .content { position: relative; z-index: 1; color: white; text-align: center; padding: 20px; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- video add ho rha -->
+    <div class="video-container"> <video autoplay muted loop> <source src="space.mp4" type="video/mp4"> Your browser does not support HTML5 video. </video> </div>
+    <!-- add ho gya -->
+
+
+    <div class="quiz-container">
+        <div id="quiz">
+            <div class="question" id="question"></div>
+            <div class="answers" id="answers"></div>
+        </div>
+        <button class="button" onclick="submitAnswer()">Submit Answer</button>
+        <div class="result" id="result"></div>
+        <div class="tips" id="tips"></div>
+    </div>
+
+    <script>
+        const quizData = [
+        {
+    question: "What is the time complexity of accessing an element in an array?",
+    answers: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+    correct: "O(1)"
+},
+{
+    question: "Which data structure uses LIFO (Last In, First Out) principle?",
+    answers: ["Queue", "Stack", "Array", "Linked List"],
+    correct: "Stack"
+},
+{
+    question: "What is the time complexity of searching an element in a balanced binary search tree?",
+    answers: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+    correct: "O(log n)"
+},
+{
+    question: "Which data structure is used in Breadth-First Search (BFS) algorithm?",
+    answers: ["Stack", "Queue", "Heap", "Graph"],
+    correct: "Queue"
+},
+{
+    question: "What is the best case time complexity of Quick Sort?",
+    answers: ["O(n^2)", "O(n)", "O(n log n)", "O(log n)"],
+    correct: "O(n log n)"
+}
+
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuiz() {
+            const questionEl = document.getElementById("question");
+            const answersEl = document.getElementById("answers");
+            const currentQuizData = quizData[currentQuestion];
+            questionEl.innerText = currentQuizData.question;
+            answersEl.innerHTML = "";
+            currentQuizData.answers.forEach(answer => {
+                const answerEl = document.createElement("input");
+                answerEl.type = "radio";
+                answerEl.name = "answer";
+                answerEl.value = answer;
+                const labelEl = document.createElement("label");
+                labelEl.innerText = answer;
+                labelEl.classList.add("answer");
+                answersEl.appendChild(answerEl);
+                answersEl.appendChild(labelEl);
+            });
+        }
+
+        function submitAnswer() {
+            const answers = document.getElementsByName("answer");
+            let selectedAnswer;
+            for (const answer of answers) {
+                if (answer.checked) {
+                    selectedAnswer = answer.value;
+                    break;
+                }
+            }
+            if (selectedAnswer === quizData[currentQuestion].correct) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuiz();
+            } else {
+                document.getElementById("quiz").style.display = "none";
+                document.getElementById("result").innerText = `You answered ${score} out of ${quizData.length} questions correctly.`;
+                document.getElementById("tips").innerText = `Gaming Tips: \n1. Stay focused and minimize distractions.\n2. Practice makes perfect!\n3. Take breaks to avoid burnout.`;
+            }
+        }
+
+        loadQuiz();
+    </script>
+</body>
+</html>
